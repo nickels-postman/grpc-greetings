@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+package hello;
+
+service HelloService {
+  rpc SayHello(HelloRequest) returns (HelloResponse);
+  rpc LotsOfReplies(HelloRequest) returns (stream HelloResponse);
+  rpc LotsOfGreetings(stream HelloRequest) returns (HelloResponse);
+  rpc BidHello(stream HelloRequest) returns (stream HelloResponse);
+  rpc CoolStuff(HelloRequest) returns (fortPoint);
+}
+
+message HelloRequest {
+  optional string greeting = 1;
+}
+
+message HelloResponse {
+  required string reply = 1;
+}
+
+message CoolStuff {
+  required string name = 1;
+  required sint32 age = 2;
+  required bytes data = 3;
+}
+
+message fortPoint {
+  required int32 volume = 1;
+}
+
