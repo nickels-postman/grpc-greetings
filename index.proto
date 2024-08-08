@@ -9,11 +9,14 @@ service HelloService {
   rpc BidHello(stream HelloRequest) returns (stream HelloResponse);
   rpc CoolStuff(HelloRequest) returns (fortPoint);
 }
-
+//bananas giraffes
 message HelloRequest {
   optional string greeting = 1;
 }
 
+message applesLions {
+  optional string greeting = 1;
+}
 message HelloResponse {
   required string reply = 1;
 }
